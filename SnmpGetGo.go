@@ -9,7 +9,7 @@ import (
 func main() {
 	snmp, err := snmpgo.NewSNMP(snmpgo.SNMPArguments{
 		Version:   snmpgo.V2c,
-		Address:   "127.0.0.1:161",
+		Address:   "10.44.3.2:161",
 		Retries:   1,
 		Community: "public",
 	})
