@@ -1,4 +1,4 @@
-package main
+package main`
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	p, err := kafka.NewProducer(&kafka.ConfigMap{"bootstrap.servers": "localhost"})
+	p, err := kafka.NewProducer(&kafka.ConfigMap{"bootstrap.servers": "10.44.64.130:2181"})
 	if err != nil {
 		panic(err)
 	}
@@ -35,7 +35,7 @@ func main() {
 	//Produce messages to topic asynchronously
 	// Change so a person input topic by command or argument
 	topic := "testlog"
-	for _, word := range []string{"Just going", "to be testing", "sending more data", "to topics", "from GO", "its working great", "next is snmp"} {
+	for _, word := range []string{"testing sending"} {
 		p.Produce(&kafka.Message{
 			TopicPartition: kafka.TopicPartition{Topic: &topic, Partition: kafka.PartitionAny},
 			Value:		[]byte(word),
